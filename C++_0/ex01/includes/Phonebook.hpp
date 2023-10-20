@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.class.cpp                                :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/25 17:35:04 by rciaze            #+#    #+#             */
-/*   Updated: 2023/05/30 14:11:40 by rciaze           ###   ########.fr       */
+/*   Created: 2023/05/25 17:35:14 by rciaze            #+#    #+#             */
+/*   Updated: 2023/10/20 15:12:02 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#ifndef PHONEBOOK_CLASS_HPP
+	#define PHONEBOOK_CLASS_HPP
 
-PhoneBook::PhoneBook(void) {
-	this->NumberOfEntries = 0;
-	return ;
-}
+#include "Contact.hpp"
 
-PhoneBook::~PhoneBook(void) {
-	return ;
-}
+class PhoneBook	{
+	public:
+		Contact	tab[8];
+		int		NumberOfEntries;
+		PhoneBook();
+		~PhoneBook();		
+		
+};
+
+
+#endif

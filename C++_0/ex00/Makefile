@@ -6,7 +6,7 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 09:28:24 by rciaze            #+#    #+#              #
-#    Updated: 2023/05/25 16:23:10 by rciaze           ###   ########.fr        #
+#    Updated: 2023/10/20 12:28:27 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,12 @@ NAME 		=	megaphone
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 CC			=	c++ 
 CLEANF 		=	@(rm -f *.o)
-OBJ 		=	${SRCS:.cpp=.o}
+OBJ			=	$(addprefix obj/,${SRCS:.cpp=.o})
+
+SRC				=	src/
 
 # SRCS
-SRCS 		=	megaphone.cpp \
+SRCS 		=	$(SRC)megaphone.cpp \
 
 # Couleurs
 BOLD		=	"\033[1m"
@@ -27,9 +29,10 @@ LIGHT_CYAN	=	"\033[96m"
 
 all : $(NAME)
 
-.cpp.o:
+obj/%.o: %.cpp
+	@mkdir -p $(dir $@)
 	@echo $(BOLD)$(LIGHT_CYAN)Compiling $<... $(RESET)
-	@${CC} ${CPPFLAGS} -c $< -o ${<:.cpp=.o}
+	@${CC} ${CPPFLAGS} -c $< -o $@ 
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
@@ -38,6 +41,7 @@ $(NAME) : $(OBJ)
 clean :
 	@$(CLEANF)
 	@echo $(BOLD)$(LIGHT_GREEN).o deleted.$(RESET)
+	@rm -rf obj/
 
 fclean : clean
 	@rm -f $(NAME)

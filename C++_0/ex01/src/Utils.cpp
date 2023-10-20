@@ -6,17 +6,23 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:01:00 by rciaze            #+#    #+#             */
-/*   Updated: 2023/10/20 15:09:46 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/10/20 18:09:49 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.hpp"
 
 bool	check_letters(std::string str) {
+	std::size_t	j = 0;
+	
 	for (unsigned i = 0; i < str.length(); ++i) {
-		if ((str.at(i) > 'z' || str.at(i) <'a') && (str.at(i) > 'Z' || str.at(i) < 'A'))
+		if (str.at(i) >= '0' && str.at(i) <= '9')
 			return (false);
+		if (str.at(i) == ' ' || str.at(i) == '\t')
+			j++;
 	}
+	if (j == str.length())
+		return (false);
 	return (true);
 }
 

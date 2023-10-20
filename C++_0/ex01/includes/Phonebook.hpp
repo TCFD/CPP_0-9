@@ -6,14 +6,16 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:35:14 by rciaze            #+#    #+#             */
-/*   Updated: 2023/10/20 15:12:02 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/10/20 18:10:58 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_CLASS_HPP
 	#define PHONEBOOK_CLASS_HPP
 
-#include "Contact.hpp"
+# include "Contact.hpp"
+
+class Contact;
 
 class PhoneBook	{
 	public:
@@ -21,8 +23,7 @@ class PhoneBook	{
 		int		NumberOfEntries;
 		PhoneBook();
 		~PhoneBook();		
-		
+	
 };
-
 
 #endif

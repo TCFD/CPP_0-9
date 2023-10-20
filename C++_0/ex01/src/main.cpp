@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:55:46 by rciaze            #+#    #+#             */
-/*   Updated: 2023/10/20 15:09:57 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:40:47 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,33 @@
 
 void	add(PhoneBook *Phone){
 	int				boolean = 1;
+	Contact			*current_contact = &Phone->tab[Phone->NumberOfEntries];
 
 	if (CheckWho(Phone))
 		return ;
 	while (boolean){
 		std::cout << LIGHT_GREEN << "Please enter your first name."<< NC << std::endl;
-		AddTo(&Phone->tab[Phone->NumberOfEntries].FirstName, &boolean);
+		current_contact->AddTo(current_contact->getFirstName(), &boolean);
 	}
 	boolean = 1;
 	while (boolean){
 		std::cout << LIGHT_GREEN << "Please enter your last name."<< NC << std::endl;
-		AddTo(&Phone->tab[Phone->NumberOfEntries].LastName, &boolean);
+		current_contact->AddTo(current_contact->getLastName(), &boolean);
 	}
 	boolean = 1;
 	while (boolean){
 		std::cout << LIGHT_GREEN << "Please enter your nickname."<< NC << std::endl;
-		AddTo(&Phone->tab[Phone->NumberOfEntries].Nickname, &boolean);
+		current_contact->AddTo(current_contact->getNickname(), &boolean);
 	}
 	boolean = 1;
 	while (boolean){
 		std::cout << LIGHT_GREEN << "Please enter your phone number."<< NC << std::endl;
-		AddPhone(&Phone->tab[Phone->NumberOfEntries].PhoneNumber, &boolean);
+		current_contact->AddPhone(current_contact->getPhoneNumber(), &boolean);
 	}
 	boolean = 1;
 	while (boolean){
 		std::cout << LIGHT_GREEN << "Please enter your darkest secret."<< NC << std::endl;
-		AddTo(&Phone->tab[Phone->NumberOfEntries].DarkestSecret, &boolean);
+		current_contact->AddTo(current_contact->getDarkestSecret(), &boolean);
 	}
 	Phone->NumberOfEntries++;
 }

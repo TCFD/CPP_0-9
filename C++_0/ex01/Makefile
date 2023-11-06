@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
+#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 09:28:24 by rciaze            #+#    #+#              #
-#    Updated: 2023/10/20 15:11:29 by rciaze           ###   ########.fr        #
+#    Updated: 2023/11/06 11:50:10 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ SRC			=	src/
 
 # SRCS
 SRCS		=	$(SRC)main.cpp \
+				$(SRC)Phonebook.cpp \
 				$(SRC)Contact.cpp \
 				$(SRC)PhoneBookFunc.cpp \
-				$(SRC)Utils.cpp \
-				$(SRC)Phonebook.cpp
+				$(SRC)Utils.cpp
 				
 # Couleurs
 BOLD		=	"\033[1m"

@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:43:39 by rciaze            #+#    #+#             */
-/*   Updated: 2023/10/20 18:10:52 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/06 11:55:46 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 	#define CONTACT_CLASS_HPP
 
-# include "Phonebook.hpp"
+// # include "Phonebook.hpp"
 # include <iostream>
 # include <stdlib.h>
-
 class PhoneBook;
 
 class Contact	{

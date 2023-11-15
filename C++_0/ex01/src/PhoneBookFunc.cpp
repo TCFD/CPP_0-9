@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBookFunc.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:39:43 by rciaze            #+#    #+#             */
-/*   Updated: 2023/10/20 18:03:16 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:44:40 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	search(PhoneBook *Phone){
 	Phone->tab->PrintContactTab(Phone);
 	while (1) {
 		std::cout << "So, who do you want to look into ?" <<std::endl;
-		std::getline (std::cin, str);
+		if (std::getline(std::cin, str)) {perror(""); CtrlD();}
 		if (!std::cin.eof() && str != "")
 		{
 			if (!check_number(str)) {
@@ -38,7 +38,7 @@ void	search(PhoneBook *Phone){
 	Phone->tab->PrintStuff(Phone->tab[i - 1]);
 }
 
-void	PrintTabElmt(std::string str){
+void	PrintTabElmt(std::string str) {
 	std::string	spaces = "          ";
 	int			NbOfChars;
 
@@ -50,7 +50,7 @@ void	PrintTabElmt(std::string str){
         std::cout << spaces.substr(0, 10 - NbOfChars) << str;
 }
 
-int	CheckWho(PhoneBook *Phone){
+int	CheckWho(PhoneBook *Phone) {
 	std::string restult;
 	if (Phone->NumberOfEntries == 8) {
 		std::cout << "Warning ! You alredy have entered the max number of contatacs. Adding another one will just replace the last one"
@@ -70,8 +70,8 @@ int	CheckWho(PhoneBook *Phone){
 	return (0);
 }
 
-void	AddPhone(std::string *str, int *boolean){
-	std::getline (std::cin, *str);
+void	AddPhone(std::string *str, int *boolean) {
+	if (std::getline(std::cin, *str)) {perror(""); CtrlD();}
 	if (!std::cin.eof() && *str != "") {
 		if (!check_number(*str)) {
 			std::cout << RED << "Wrong input type." << NC << std::endl;

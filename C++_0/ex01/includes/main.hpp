@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:00 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/06 11:50:29 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/15 15:44:02 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "Contact.hpp"
 # include <iostream>
 # include <stdlib.h>
+# include <cstdio>
+
 
 # define NC					"\e[0m"
 # define RED				"\e[31m"

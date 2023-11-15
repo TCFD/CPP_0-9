@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:32:23 by rciaze            #+#    #+#             */
-/*   Updated: 2023/06/01 15:44:05 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/13 09:58:45 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string ToBeName, Weapon &ToBeWeapon) : weapon(ToBeWeapon) {
-	this->name = ToBeName;
+HumanA::HumanA(std::string ToBeName, Weapon &ToBeWeapon) : weapon(ToBeWeapon), name(ToBeName){
 }
 
 HumanA::~HumanA() {

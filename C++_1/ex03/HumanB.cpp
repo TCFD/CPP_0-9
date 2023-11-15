@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:07:24 by rciaze            #+#    #+#             */
-/*   Updated: 2023/06/01 15:42:57 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/13 09:59:07 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string ToBeName) {
-	this->weapon = NULL;
-	this->name = ToBeName;
+HumanB::HumanB(std::string ToBeName) : name(ToBeName), weapon(NULL){
 }
 
 HumanB::~HumanB() {

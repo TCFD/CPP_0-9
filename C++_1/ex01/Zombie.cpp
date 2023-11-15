@@ -6,13 +6,14 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:30:18 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/06 12:21:07 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/13 09:57:33 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() {
+Zombie::Zombie(std::string name) : name(name){
+	std::cout << this->name << " Is now awake." << std::endl;
 }
 
 Zombie::~Zombie() {

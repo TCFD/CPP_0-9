@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:00 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/15 15:44:02 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/28 11:57:46 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <iostream>
 # include <stdlib.h>
 # include <cstdio>
+# include <csignal>
 
 
 # define NC					"\e[0m"
@@ -39,5 +40,6 @@ void	AddPhone(std::string *str, int *boolean);
 void	CtrlD(void);
 bool	check_letters(std::string str);
 bool	check_number(std::string str);
+void	CtrlC(int signal);
 
 #endif

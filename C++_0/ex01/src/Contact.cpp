@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:51:36 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/15 15:43:56 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/28 11:51:03 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void Contact::setDarkestSecret(const std::string &secret) {
 
 void	Contact::AddTo(std::string *str, int *boolean){
 	
-	if (std::getline(std::cin, *str)) {perror(""); CtrlD();}
+	if (!std::getline(std::cin, *str)) {perror(""); CtrlD();}
 	if (!std::cin.eof() && *str != "") {
 		if (!check_letters(*str)) {
 			std::cout << RED << "Wrong input type." << NC << std::endl;
@@ -76,7 +76,7 @@ void	Contact::AddTo(std::string *str, int *boolean){
 }
 
 void	Contact::AddPhone(std::string *str, int *boolean){
-	if (std::getline(std::cin, *str)) {perror(""); CtrlD();}
+	if (!std::getline(std::cin, *str)) {perror(""); CtrlD();}
 	if (!std::cin.eof() && *str != "") {
 		if (!check_number(*str)) {
 			std::cout << RED << "Wrong input type." << NC << std::endl;

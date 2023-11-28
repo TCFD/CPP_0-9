@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBookFunc.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:39:43 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/15 15:44:40 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/28 11:51:21 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	search(PhoneBook *Phone){
 	Phone->tab->PrintContactTab(Phone);
 	while (1) {
 		std::cout << "So, who do you want to look into ?" <<std::endl;
-		if (std::getline(std::cin, str)) {perror(""); CtrlD();}
+		if (!std::getline(std::cin, str)) {perror(""); CtrlD();}
 		if (!std::cin.eof() && str != "")
 		{
 			if (!check_number(str)) {
@@ -71,7 +71,7 @@ int	CheckWho(PhoneBook *Phone) {
 }
 
 void	AddPhone(std::string *str, int *boolean) {
-	if (std::getline(std::cin, *str)) {perror(""); CtrlD();}
+	if (!std::getline(std::cin, *str)) {perror(""); CtrlD();}
 	if (!std::cin.eof() && *str != "") {
 		if (!check_number(*str)) {
 			std::cout << RED << "Wrong input type." << NC << std::endl;

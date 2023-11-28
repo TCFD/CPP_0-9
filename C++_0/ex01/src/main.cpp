@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:55:46 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/15 15:43:34 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/28 11:49:22 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(void){
 	std::cout << LIGHT_GRAY << "Welcome to your advanced phonebook ! " << NC << std::endl;
 	while (1){
 		std::cout << BOLD << LIGHT_GRAY << "Please, enter a command" << NC << std::endl;
-		if (std::getline(std::cin, command)) {perror(""); CtrlD();}
+		if (!std::getline(std::cin, command)) {perror(""); CtrlD();}
 		if (command == "EXIT" || std::cin.eof())
 			CtrlD();
 		else if (command == "ADD")

@@ -6,11 +6,15 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:32:13 by rciaze            #+#    #+#             */
-/*   Updated: 2023/06/02 16:46:06 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/28 18:05:14 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+# define HARL_HPP
+
 #include <iostream>
+#include <stdlib.h>
 
 class Harl
 {
@@ -24,3 +28,5 @@ class Harl
 		~Harl();
 		void complain(std::string level);
 };
+
+#endif

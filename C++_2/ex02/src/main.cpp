@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:56:28 by zbp15             #+#    #+#             */
-/*   Updated: 2023/11/13 09:36:50 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/28 18:20:28 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 int main( void ) {
 	Fixed a (1234.4321f);
@@ -19,8 +19,8 @@ int main( void ) {
 	Fixed d( 42 );
 
 	std::cout << RED << "++ operator test" << NC << std::endl;
-	std::cout << "d =  " << d << std::endl;
-	std::cout << "d++ =  " << d++ << std::endl;
+	std::cout << "d = " << d << std::endl;
+	std::cout << "d++ = " << d++ << std::endl;
 	std::cout << "d = " << d << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "++b =  " << ++b << std::endl;
@@ -29,8 +29,8 @@ int main( void ) {
 	b = 10;
 	d = 42;
 	std::cout << RED << "-- operator test" << NC << std::endl;
-	std::cout << "d =  " << d << std::endl;
-	std::cout << "d-- =  " << d-- << std::endl;
+	std::cout << "d = " << d << std::endl;
+	std::cout << "d-- = " << d-- << std::endl;
 	std::cout << "d = " << d << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "--b =  " << --b << std::endl;

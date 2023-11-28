@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:39:43 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 11:51:21 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:33:27 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,13 @@ void	search(PhoneBook *Phone){
 }
 
 void	PrintTabElmt(std::string str) {
-	std::string	spaces = "          ";
-	int			NbOfChars;
-
 	std::cout << "|";
-	NbOfChars = str.length();
-	if (NbOfChars > 10)
-        std::cout << str.substr(0, 9) << ".";
-	else
-        std::cout << spaces.substr(0, 10 - NbOfChars) << str;
+	if (str.length() > 10) {
+        str = str.substr(0, 9) + ".";
+    }
+
+    std::cout << std::setw(10) << std::right << str ;
+
 }
 
 int	CheckWho(PhoneBook *Phone) {

@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:00 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 11:57:46 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:15:20 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <cstdio>
 # include <csignal>
+# include <iomanip>
 
 
 # define NC					"\e[0m"

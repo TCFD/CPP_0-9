@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:55:46 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 11:56:28 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:01:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 void	add(PhoneBook *Phone){
 	int				boolean = 1;
-	Contact			*current_contact = &Phone->tab[Phone->NumberOfEntries];
 
 	if (CheckWho(Phone))
 		return ;
+
+	Contact			*current_contact = &Phone->tab[Phone->NumberOfEntries];
+	
 	while (boolean){
 		std::cout << LIGHT_GREEN << "Please enter your first name."<< NC << std::endl;
 		current_contact->AddTo(current_contact->getFirstName(), &boolean);

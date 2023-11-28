@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:51:36 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 11:51:03 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:34:05 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,19 +91,19 @@ void	Contact::AddPhone(std::string *str, int *boolean){
 void	Contact::PrintContactTab(PhoneBook *Phone) {
 	int 		i = 0;
 
-	std::cout << "├─────────────────────────────────────────────────────────┤" << std::endl;
+	std::cout << "├───────────────────────────────────────────┤" << std::endl;
+	std::cout << "│     Index|First name| Last name|  Nickname│" << std::endl;
+	std::cout << "├───────────────────────────────────────────┤" << std::endl;
 	for (i = 0; i < Phone->NumberOfEntries; i++) {
-    	std::cout << "│" << i + 1 << " ";
+    	std::cout << "│" << "         " << i + 1 ;
 		PrintTabElmt(Phone->tab[i].FirstName);
 		PrintTabElmt(Phone->tab[i].LastName);
 		PrintTabElmt(Phone->tab[i].Nickname);
-		PrintTabElmt(Phone->tab[i].PhoneNumber);
-		PrintTabElmt(Phone->tab[i].DarkestSecret);
 		std::cout << "│" << std::endl;
 		if (i < Phone->NumberOfEntries - 1)
-			std::cout << "├─────────────────────────────────────────────────────────┤" << std::endl;
+			std::cout << "├───────────────────────────────────────────┤" << std::endl;
 	}
-	std::cout << "├─────────────────────────────────────────────────────────┤" << std::endl;
+	std::cout << "├───────────────────────────────────────────┤" << std::endl;
 }
 
 void	Contact::PrintStuff(Contact contact){
@@ -114,4 +114,3 @@ void	Contact::PrintStuff(Contact contact){
 	std::cout << "	Darkest secret :  " << contact.DarkestSecret << "\n" << std::endl;
 	
 }
-

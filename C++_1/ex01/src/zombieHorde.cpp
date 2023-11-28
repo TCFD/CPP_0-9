@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 14:27:10 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/13 09:55:55 by zbp15            ###   ########.fr       */
+/*   Created: 2023/05/31 15:40:26 by rciaze            #+#    #+#             */
+/*   Updated: 2023/11/28 12:06:17 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "../includes/Zombie.hpp"
 
-class Zombie
-{
-	private:
-		std::string name;
-	public:
-		Zombie		(std::string name);
-		~Zombie		();
-		void 		announce( void );
-		void		AddName(std::string name);
-};
+Zombie	*zombieHorde( int N, std::string name ) {
+	Zombie *horde = new Zombie[N];
 
-Zombie	*zombieHorde( int N, std::string name );
+	for (int i = 0; i < N ; i++)
+		horde[i].AddName(name);
+	return (horde);
+}

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 12:39:31 by rciaze            #+#    #+#             */
-/*   Updated: 2023/06/01 15:11:38 by rciaze           ###   ########.fr       */
+/*   Created: 2023/05/31 14:30:41 by rciaze            #+#    #+#             */
+/*   Updated: 2023/11/28 12:03:35 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "../includes/Zombie.hpp"
 
-#ifndef WEAPON_HPP
-	#define WEAPON_HPP
+int	main(void){
+	Zombie	first("first");
+	Zombie	*second = newZombie("second");
 
-class Weapon {
-	private:
-		std::string type;
-	public:
-		Weapon(std::string FristType);
-		~Weapon();
-		const std::string	getType(void);
-		void				setType(std::string NewType);
-};
-
-#endif
+	first.announce();
+	second->announce();
+	randomChump("Chump one");
+	delete (second);
+	return (0);
+}

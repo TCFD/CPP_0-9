@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 15:34:23 by rciaze            #+#    #+#             */
-/*   Updated: 2023/05/31 15:35:16 by rciaze           ###   ########.fr       */
+/*   Created: 2023/05/31 14:40:21 by rciaze            #+#    #+#             */
+/*   Updated: 2023/11/28 12:03:38 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../includes/Zombie.hpp"
 
-void	randomChump(std::string name){
-	Zombie	temp(name);
-	temp.announce();
+Zombie*	newZombie(std::string name){
+	Zombie	*ReturnZombie = new Zombie(name);
+	return (ReturnZombie);
 }

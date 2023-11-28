@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:30:41 by rciaze            #+#    #+#             */
-/*   Updated: 2023/06/13 13:04:45 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/28 12:20:50 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "../includes/HumanA.hpp"
+#include "../includes/HumanB.hpp"
 
 int main() {
 	{

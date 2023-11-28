@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:07:24 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/13 09:59:07 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/11/28 12:20:52 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "../includes/HumanB.hpp"
 
 HumanB::HumanB(std::string ToBeName) : name(ToBeName), weapon(NULL){
 }

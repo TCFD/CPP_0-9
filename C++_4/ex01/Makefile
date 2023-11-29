@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
+#    By: raphael <raphael@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2023/11/22 16:01:18 by zbp15            ###   ########.fr        #
+#    Updated: 2023/11/29 14:39:01 by raphael          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,18 @@ NAME 		=	ex01
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 CC			=	c++ 
 CLEANF 		=	@(rm -f *.o)
-OBJ			=	${SRCS:.cpp=.o}
+OBJ			=	$(addprefix obj/,${SRCS:.cpp=.o})
+
+SRC			=	src/
 
 # SRCS
-SRCS		=	main.cpp \
-				Animal.cpp \
-				WrongAnimal.cpp \
-				Dog.cpp \
-				WrongCat.cpp \
-				Brain.cpp \
-				Cat.cpp
+SRCS		=	$(SRC)main.cpp \
+				$(SRC)Animal.cpp \
+				$(SRC)WrongAnimal.cpp \
+				$(SRC)Dog.cpp \
+				$(SRC)WrongCat.cpp \
+				$(SRC)Brain.cpp \
+				$(SRC)Cat.cpp
 # Couleurs
 BOLD		=	"\033[1m"
 RESET		=	"\033[0m"
@@ -32,9 +34,10 @@ LIGHT_CYAN	=	"\033[96m"
 
 all : $(NAME)
 
-.cpp.o:
+obj/%.o: %.cpp
+	@mkdir -p $(dir $@)
 	@echo $(BOLD)$(LIGHT_CYAN)Compiling $<... $(RESET)
-	@${CC} ${CPPFLAGS} -c $< -o ${<:.cpp=.o}
+	@${CC} ${CPPFLAGS} -c $< -o $@
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
@@ -43,6 +46,7 @@ $(NAME) : $(OBJ)
 clean :
 	@$(CLEANF)
 	@echo $(BOLD)$(LIGHT_GREEN).o deleted.$(RESET)
+	@rm -rf obj/
 
 fclean : clean
 	@rm -f $(NAME)

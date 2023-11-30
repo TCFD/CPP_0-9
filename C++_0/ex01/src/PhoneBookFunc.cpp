@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:39:43 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 19:33:27 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/30 12:59:32 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,20 +49,24 @@ void	PrintTabElmt(std::string str) {
 }
 
 int	CheckWho(PhoneBook *Phone) {
-	std::string restult;
+	std::string result;
 	if (Phone->NumberOfEntries == 8) {
 		std::cout << "Warning ! You alredy have entered the max number of contatacs. Adding another one will just replace the last one"
 			<< std::endl << "Do you want to still add the contact ? (y/n)" << std::endl;
 		while (1) {
-			std::cin >> restult;
-			if (restult == "y") {
-				Phone->NumberOfEntries -= 1;
-				return (0);
-			} 
-			else if (restult == "n")
-				return (1);
-			else
-				std::cout << "Wrong input." << std::endl;
+			if (!std::getline(std::cin, result)) {perror(""); CtrlD();}
+			if (!std::cin.eof() && result != "") {
+				if (result == "y") {
+					Phone->NumberOfEntries -= 1;
+					return (0);
+				} 
+				else if (result == "n")
+					return (1);
+				else
+					std::cout << "Wrong input." << std::endl;
+			}
+			else if (std::cin.eof())
+				CtrlD() ;
 		}
 	}
 	return (0);

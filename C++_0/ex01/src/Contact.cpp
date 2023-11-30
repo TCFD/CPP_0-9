@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:51:36 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 19:34:05 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/30 13:00:27 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	Contact::AddTo(std::string *str, int *boolean){
 			return ;
 		}
 		*boolean = 0;
+		return ;
 	}
 	else if (std::cin.eof())
 		CtrlD() ;

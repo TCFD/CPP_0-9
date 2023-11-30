@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:55:46 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 19:01:45 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/30 13:01:36 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	main(void){
 	std::string command;
 
 	std::signal(SIGINT, CtrlC);
+	std::signal(SIGQUIT, CtrlC);
 	std::cout << LIGHT_GRAY << "Welcome to your advanced phonebook ! " << NC << std::endl;
 	while (1){
 		std::cout << BOLD << LIGHT_GRAY << "Please, enter a command" << NC << std::endl;

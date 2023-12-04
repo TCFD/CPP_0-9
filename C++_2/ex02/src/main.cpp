@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:56:28 by zbp15             #+#    #+#             */
-/*   Updated: 2023/11/28 18:20:28 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/12/04 14:52:02 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,13 @@ int main( void ) {
 	std::cout << "b == d = " << (bool)(b == d) << std::endl;
 	std::cout << "b != c = " << (bool)(b != c) << std::endl;
 	std::cout << "b != d = " << (bool)(b != d) << std::endl;
+	std::cout << "min/max operator test" << std::endl;
+
+	b = 10;
+	d = 42;
+	std::cout << RED << "/ operator test" << NC << std::endl;
+	std::cout << "b = " << b << " d = " << d << std::endl;
+	std::cout << "min(b, d) = " << Fixed::min(b, d) << std::endl;
+	std::cout << "max(b, d) = " << Fixed::max(b, d) << std::endl;
 	return 0;
 }

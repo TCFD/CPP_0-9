@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:33:54 by rciaze            #+#    #+#             */
-/*   Updated: 2023/06/14 11:14:47 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/12/04 14:44:40 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	main(int argc, char **argv) {
 		std::getline (file, add);
 		content += (add + "\n");
 	}
-	content.erase(content.length() - 1, 1);
 	replace(content, argv[2], argv[3]);
 	std::string endfile(argv[1]);
 	endfile += ".replace";

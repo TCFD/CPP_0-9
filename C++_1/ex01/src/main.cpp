@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:30:41 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 12:06:04 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/12/01 14:36:41 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 int	main(void) {
 	Zombie	*horde = zombieHorde(10, "test");
 
-	for (int i = 0; i < 10; i++){
-		std::cout << "Nb " << i << ": ";
-		horde[i].announce();
+	if (horde != NULL) {
+		for (int i = 0; i < 10; i++){
+			std::cout << "Nb " << i << ": ";
+			horde[i].announce();
+		}
+		delete[] horde;
 	}
-	delete[] horde;
 	return (0);
 }

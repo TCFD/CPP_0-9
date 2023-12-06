@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:06:13 by zbp15             #+#    #+#             */
-/*   Updated: 2023/11/29 14:40:49 by raphael          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:09:53 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ Dog::Dog(const Dog &src) : Animal(src), brain(NULL) {
 
 Dog &Dog::operator=(const Dog &src) {
 	if (this != &src) {
+		delete this->brain;
 		Animal::operator=(src);
-		Brain *newBrain;
-		if (src.brain)
-			newBrain = new Brain(*src.brain);
+		if (src.brain) {
+			Brain *newBrain = new Brain(*(src.brain));
+			this->brain = newBrain;
+		}
 		else
-			newBrain = NULL;
-		this->brain = newBrain;
+			this->brain = NULL;
 	}
 	return (*this);
 }

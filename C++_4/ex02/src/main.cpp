@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:32:20 by zbp15             #+#    #+#             */
-/*   Updated: 2023/11/29 14:40:47 by raphael          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:22:36 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main() {
     cat->makeSound();
 
     delete dog;
-    delete cat;
-
-    return 0;
+	delete cat;
+	return 0;
 }

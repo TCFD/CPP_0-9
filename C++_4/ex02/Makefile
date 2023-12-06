@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: raphael <raphael@student.42.fr>            +#+  +:+       +#+         #
+#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2023/11/29 14:39:06 by raphael          ###   ########.fr        #
+#    Updated: 2023/12/06 16:20:07 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ex01
+NAME 		=	ex02
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 CC			=	c++ 
 CLEANF 		=	@(rm -f *.o)

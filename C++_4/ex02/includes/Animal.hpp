@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:00:46 by zbp15             #+#    #+#             */
-/*   Updated: 2023/12/06 16:47:42 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/12/08 15:23:22 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Animal {
 		Animal &operator=(const Animal &src);
 		std::string getType() const;
 		virtual void makeSound() const = 0;
-		virtual Brain* getBrain() const = 0;
+		//virtual Brain* getBrain() const = 0;
 };
 
 #endif

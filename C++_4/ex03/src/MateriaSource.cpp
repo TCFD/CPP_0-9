@@ -1,4 +1,4 @@
-# include "MateriaSource.hpp"
+# include "../includes/MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void) { 
     for (int i = 0; i < 4; i++)
@@ -16,10 +16,12 @@ MateriaSource::~MateriaSource() {
     }
 }
 
-MateriaSource&   MateriaSource::operator=(const MateriaSource& bis)
-{
-    for (int i = 0; i < 4; i++)
-        tab[i] = bis.tab[i];
+MateriaSource&   MateriaSource::operator=(const MateriaSource& bis) {
+    if (this != &bis)
+    {
+        for (int i = 0; i < 4; i++)
+            tab[i] = bis.tab[i];
+    }
     return (*this);
 }
 

@@ -1,35 +1,45 @@
-NAME 		= Materia
-CXX			= c++
-CXXFLAGS 	= -Wall -Wextra -Werror -g3
-LIBS		= AMateria.cpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp MateriaSource.hpp IMateriaSource.hpp
+NAME 		=	ex03
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+CC			=	c++ 
+CLEANF 		=	@(rm -f *.o)
+OBJ			=	$(addprefix obj/,${SRCS:.cpp=.o})
 
-SRCS 		= main.cpp AMateria.cpp Ice.cpp Character.cpp Cure.cpp MateriaSource.cpp
-OBJ_DIR		= obj
-OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
+SRC			=	src/
 
-NC 			= \033[0m
-CYAN   		= \033[36;1m
-GREEN   	= \033[32;1m
-RED     	= \033[31;1m
+# SRCS
+SRCS 		= 	$(SRC)main.cpp \
+				$(SRC)AMateria.cpp \
+				$(SRC)Ice.cpp \
+				$(SRC)Character.cpp \
+				$(SRC)Cure.cpp \
+				$(SRC)MateriaSource.cpp \
 
-all	: $(NAME)
+# Couleurs
+BOLD		=	"\033[1m"
+RESET		=	"\033[0m"
+LIGHT_GREEN	=	"\033[92m"
+LIGHT_CYAN	=	"\033[96m"
 
-$(OBJ_DIR)/%.o : %.cpp
-	@mkdir -p $(OBJ_DIR)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
-	@echo "$(CYAN)wait...$(NC)\n"
+all : $(NAME)
 
-$(NAME) : $(OBJS) $(LIBS)
-	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	@echo "$(GREEN)\t---- Compilation Done ----\n$(NC)"
+obj/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@echo $(BOLD)$(LIGHT_CYAN)Compiling $<... $(RESET)
+	@${CC} ${CPPFLAGS} -c $< -o $@
+
+$(NAME) : $(OBJ)
+	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@echo $(BOLD)$(LIGHT_GREEN)$(NAME) is created !$(RESET)
 
 clean :
-	@rm -rf $(OBJS) $(OBJ_DIR)
-	@echo "$(RED)\t-- Clean Done --$(NC)\n"
+	@$(CLEANF)
+	@echo $(BOLD)$(LIGHT_GREEN).o deleted.$(RESET)
+	@rm -rf obj/
 
 fclean : clean
-	@rm -rf $(NAME)
-	@echo "$(RED)\t-- FClean Done --$(NC)\n"
+	@rm -f $(NAME)
+	@echo $(BOLD)$(LIGHT_GREEN)$(NAME) deleted.$(RESET)
 
-re : fclean
-	@make -s all
+re : fclean all
+
+.PHONY : all re clean fclean 

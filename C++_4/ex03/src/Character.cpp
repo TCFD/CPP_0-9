@@ -1,4 +1,4 @@
-# include "Character.hpp"
+# include "../includes/Character.hpp"
 
 Character::Character(void) : _name("no_name") { 
     for (int i = 0; i < 4; i++)
@@ -22,12 +22,14 @@ std::string const&  Character::getName(void) const {
 
 Character&   Character::operator=(const Character& bis)
 {
-    for (int i = 0; i < 4; i++) {
-        if (tab[i])
-            delete tab[i];
-        tab[i] = bis.tab[i];
+    if (this != &bis) {
+        for (int i = 0; i < 4; i++) {
+            if (tab[i])
+                delete tab[i];
+            tab[i] = bis.tab[i];
+        }
+        _name = bis._name;
     }
-    _name = bis._name;
     return (*this);
 }
 

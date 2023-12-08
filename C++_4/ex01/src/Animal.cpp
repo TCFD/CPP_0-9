@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:06:13 by zbp15             #+#    #+#             */
-/*   Updated: 2023/11/29 14:40:17 by raphael          ###   ########.fr       */
+/*   Updated: 2023/12/08 15:18:27 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain*	Animal::getBrain(void) const {
 
 Animal::Animal() {
 	type = "prout";
-	std::cout << GREEN << "Animal constructor called" << NC << std::endl;
+	std::cout << PURPLE << "Animal constructor called" << NC << std::endl;
 }
 
 Animal::~Animal() {
@@ -27,7 +27,7 @@ Animal::~Animal() {
 }
 
 Animal::Animal(const Animal &src) : type(src.type) {
-	std::cout << GREEN << "Animal copy constructor called" << NC << std::endl;
+	std::cout << PURPLE << "Animal copy constructor called" << NC << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &src) {

@@ -1,5 +1,5 @@
-# include "AMateria.hpp"
-# include "ICharacter.hpp"
+# include "../includes/AMateria.hpp"
+# include "../includes/ICharacter.hpp"
 
 AMateria::AMateria(void) {}
 
@@ -7,7 +7,12 @@ AMateria::AMateria(std::string const& type) : _type(type) {}
 
 AMateria::AMateria(const AMateria &cpy) : _type(cpy.getType()) {}
 
-AMateria&   AMateria::operator=(const AMateria& bis) {_type = bis.getType(); return *this;}
+AMateria&   AMateria::operator=(const AMateria& bis)
+{
+    if (this != &bis)
+        _type = bis.getType();
+    return *this;
+}
 
 const std::string& AMateria::getType(void) const
 {

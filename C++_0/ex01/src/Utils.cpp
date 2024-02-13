@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:01:00 by rciaze            #+#    #+#             */
-/*   Updated: 2023/11/28 11:59:33 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/11/30 16:43:13 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool	check_letters(std::string str) {
 	std::size_t	j = 0;
 	
 	for (unsigned i = 0; i < str.length(); ++i) {
-		if (str.at(i) >= '0' && str.at(i) <= '9')
+		if ((str.at(i) >= 'Z' && str.at(i) <= 'a') || str.at(i) >= 'z' || str.at(i) <= 'A')
 			return (false);
 		if (str.at(i) == ' ' || str.at(i) == '\t')
 			j++;

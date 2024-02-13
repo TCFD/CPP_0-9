@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: raphael <raphael@student.42.fr>            +#+  +:+       +#+         #
+#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2023/11/29 14:38:57 by raphael          ###   ########.fr        #
+#    Updated: 2024/02/13 20:54:12 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ex00
+NAME 		=	ex01
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 CC			=	c++ 
 CLEANF 		=	@(rm -f *.o)
@@ -20,11 +20,8 @@ SRC			=	src/
 
 # SRCS
 SRCS		=	$(SRC)main.cpp \
-				$(SRC)Animal.cpp \
-				$(SRC)WrongAnimal.cpp \
-				$(SRC)Dog.cpp \
-				$(SRC)WrongCat.cpp \
-				$(SRC)Cat.cpp
+				$(SRC)Bureaucrat.cpp
+
 # Couleurs
 BOLD		=	"\033[1m"
 RESET		=	"\033[0m"

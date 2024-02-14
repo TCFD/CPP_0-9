@@ -45,11 +45,11 @@ AForm& AForm::operator=(AForm& other) {
 }
 
 AForm::AForm(const AForm &a) : name(a.getName()), isSigned(a.getIsSigned()), gradeToSign(a.getGradeToSign()), gradeToExecute(a.getGradeToExecute()) {
-	std::cout << PURPLE << "AForm copy constructor called" << NC << std::endl
+	std::cout << PURPLE << "AForm copy constructor called" << NC << std::endl;
 }
 
 
-AForm::AForm(std::string name, int gradeToExecute, int gradeToSign) : name("random aform"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
+AForm::AForm() : name("random aform"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
 	std::cout << PURPLE << "AForm default constructor called" << NC << std::endl;
 }
 

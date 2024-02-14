@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 18:58:02 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/14 19:39:38 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void) {
 
-	Bureaucrat	steve("Steve", 2);
+	/* Bureaucrat	steve("Steve", 2);
 	AForm		newAForm("newAForm", 3, 3);
 	std::cout << newAForm << std::endl;
 	newAForm.beSigned(steve);
@@ -29,5 +29,5 @@ int	main(void) {
 	AForm		oldAForm("oldAForm", 1, 1);
 	std::cout << steve << std::endl;
 	steve.signAForm(oldAForm);
-	std::cout << oldAForm << std::endl;
+	std::cout << oldAForm << std::endl; */
 }

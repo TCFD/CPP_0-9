@@ -6,13 +6,13 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:22:42 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:08:27 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/14 19:11:05 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat	{
 	private:
@@ -29,7 +29,7 @@ class Bureaucrat	{
 		unsigned 			getGrade() const;
 		void				incrementGrade();
 		void				decrementGrade();
-		void				signForm(Form &form);
+		void				signAForm(AForm &form);
 
 		class GradeTooHighException : public std::exception{public:
 			virtual const char* what() const throw();

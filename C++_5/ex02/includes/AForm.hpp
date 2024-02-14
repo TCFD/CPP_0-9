@@ -1,18 +1,18 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:56:08 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:08:38 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/14 16:26:57 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class Form {
+class AForm {
 	private:
 		const std::string	name;
 		bool				isSigned;
@@ -32,11 +32,13 @@ class Form {
 		class GradeTooLowException : public std::exception{public:
 			virtual const char* what() const throw();
 		};
-		Form(std::string name, int getGradeToExecute, int gradeToSign);
-		~Form();
-		Form();
-		Form(const Form &a);
-		Form& operator=(Form& other);
+		AForm(std::string name, int getGradeToExecute, int gradeToSign);
+		AForm(const AForm &a);
+		AForm& operator=(AForm& other);
+		AForm();
+
+		virtual ~AForm();
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
-std::ostream	&operator<<(std::ostream &out, const Form &instance);
+std::ostream	&operator<<(std::ostream &out, const AForm &instance);

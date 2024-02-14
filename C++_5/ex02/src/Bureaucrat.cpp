@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:42:18 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:08:17 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/14 19:11:00 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) {
 	this->grade = grade;
 }
 
-void	Bureaucrat::signForm(Form &form) {
+void	Bureaucrat::signAForm(AForm &form) {
 	std::cout << CYAN << name;
 	try 
 	{

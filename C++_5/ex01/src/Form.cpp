@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:56:01 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 16:27:53 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/14 19:09:49 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ Form::Form(std::string name, int gradeToExecute, int gradeToSign) : name(name), 
 		throw GradeTooHighException();
 	if (gradeToExecute > 150 || gradeToSign > 150)
 		throw GradeTooLowException();
+}
+
+Form::Form(std::string name, int gradeToExecute, int gradeToSign) : name("random form"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
+	std::cout << PURPLE << "Form default constructor called" << NC << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form &instance) {
@@ -44,7 +48,10 @@ Form& Form::operator=(Form& other) {
 	return (*this);
 }
 
-Form::Form(const Form &a) : name(a.getName()), isSigned(a.getIsSigned()), gradeToSign(a.getGradeToSign()), gradeToExecute(a.getGradeToExecute()) {std::cout << PURPLE << "Form copy constructor called" << NC << std::endl;}
+Form::Form(const Form &a) : name(a.getName()), isSigned(a.getIsSigned()), gradeToSign(a.getGradeToSign()), gradeToExecute(a.getGradeToExecute()) {
+	std::cout << PURPLE << "Form copy constructor called" << NC << std::endl;
+}
+
 const char* Form::GradeTooLowException::what()	const throw()	{return ("Grade is too low");}
 const char* Form::GradeTooHighException::what()	const throw()	{return ("Grade is too high");}
 unsigned	Form::getGradeToSign()				const 			{return gradeToSign;}

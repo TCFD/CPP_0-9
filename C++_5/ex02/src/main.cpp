@@ -5,38 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 15:32:20 by zbp15             #+#    #+#             */
-/*   Updated: 2023/12/08 23:57:34 by zbp15            ###   ########.fr       */
+/*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
+/*   Updated: 2024/02/14 18:58:02 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.hpp"
 
-int main()
-{
-	Animal *a[100];
+int	main(void) {
 
-	int i = 0;
-	for (; i < 50; ++i)
-		a[i] = new Dog();
-	for (; i < 100; ++i)
-		a[i] = new Cat();
+	Bureaucrat	steve("Steve", 2);
+	AForm		newAForm("newAForm", 3, 3);
+	std::cout << newAForm << std::endl;
+	newAForm.beSigned(steve);
+	std::cout << newAForm << std::endl;
+	newAForm.beSigned(steve);
+	std::cout << newAForm << std::endl;
+	steve.signAForm(newAForm);
+	steve.decrementGrade();
+	steve.decrementGrade();
+	steve.decrementGrade();
 
-	a[0]->getBrain()->printIdeas();
-	a[0]->getBrain()->setIdeas("EH OHHHH");
-	a[0]->getBrain()->printIdeas();
-	a[0]->getBrain()->setIdeas("ON M'ENTENDS ?");
-	std::cout << "----------------------------------\n";
-	a[0]->getBrain()->printIdeas();
-
-	for (int j = 0; j < 100; ++j)
-		delete a[j];
-
-	Dog hey;
-	{
-		hey.getBrain()->setIdeas("HEY");
-		Dog tmp = hey;
-	}
-	hey.getBrain()->printIdeas();
-	return (0);
+	AForm		oldAForm("oldAForm", 1, 1);
+	std::cout << steve << std::endl;
+	steve.signAForm(oldAForm);
+	std::cout << oldAForm << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 15:43:16 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/14 18:32:07 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void) {
 	steve.decrementGrade();
 	steve.decrementGrade();
 	steve.decrementGrade();
+
 	Form		oldForm("oldForm", 1, 1);
 	std::cout << steve << std::endl;
 	steve.signForm(oldForm);

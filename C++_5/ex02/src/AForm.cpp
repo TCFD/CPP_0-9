@@ -48,10 +48,12 @@ AForm::AForm(const AForm &a) : name(a.getName()), isSigned(a.getIsSigned()), gra
 	std::cout << PURPLE << "AForm copy constructor called" << NC << std::endl;
 }
 
-
 AForm::AForm() : name("random aform"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
 	std::cout << PURPLE << "AForm default constructor called" << NC << std::endl;
 }
+
+const char* AForm::NotSignedException::what()	const throw()	{return ("Form isn't signed.");}
+
 
 const char* AForm::GradeTooLowException::what()	const throw()	{return ("Grade is too low");}
 const char* AForm::GradeTooHighException::what()	const throw()	{return ("Grade is too high");}

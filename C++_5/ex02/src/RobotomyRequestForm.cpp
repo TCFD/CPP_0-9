@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
 
-void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (!this->getIsSigned() == false) {
 		throw AForm::NotSignedException();
 	}
@@ -21,21 +21,21 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	std::cout << RED << target << " has been pardoned by Zaphod Beeblebrox." << NC << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 5, 25) {
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 45, 72) {
 	target = "uuuuh... no one ?";
-	std::cout << PURPLE << "Default PresidentialPardonForm constructor called" << NC << std::endl;	
+	std::cout << PURPLE << "Default RobotomyRequestForm constructor called" << NC << std::endl;	
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 5, 25) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 45, 72) {
 	this->target = target;
-	std::cout << PURPLE << "PresidentialPardonForm constructor called" << NC << std::endl;	
+	std::cout << PURPLE << "RobotomyRequestForm constructor called" << NC << std::endl;	
 }
 
-PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << GREEN << "PresidentialPardonForm destructor called" << NC << std::endl;	
+RobotomyRequestForm::~RobotomyRequestForm() {
+	std::cout << GREEN << "RobotomyRequestForm destructor called" << NC << std::endl;	
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm& other) {
+RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& other) {
 	this->target = other.target;
 	return (*this);
 }

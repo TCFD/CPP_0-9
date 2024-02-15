@@ -12,6 +12,14 @@
 
 #include <iostream>
 
+# define NC					"\e[0m"
+# define RED				"\e[31m"
+# define GREEN				"\e[32m"
+# define PURPLE				"\e[35m"
+# define CYAN				"\e[36m"
+
+class Bureaucrat;
+
 class AForm {
 	private:
 		const std::string	name;
@@ -30,6 +38,9 @@ class AForm {
 			virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception{public:
+			virtual const char* what() const throw();
+		};
+		class NotSignedException : public std::exception{public:
 			virtual const char* what() const throw();
 		};
 		AForm(std::string name, int getGradeToExecute, int gradeToSign);

@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:56:08 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:08:38 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/16 00:16:41 by raphael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FORM_HPP
+# define FORM_HPP
 
 #include <iostream>
 
@@ -40,3 +43,5 @@ class Form {
 };
 
 std::ostream	&operator<<(std::ostream &out, const Form &instance);
+
+#endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
+#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2024/02/15 18:25:24 by rciaze           ###   ########.fr        #
+#    Updated: 2024/02/16 16:34:51 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS		=	$(SRC)main.cpp \
 				$(SRC)Bureaucrat.cpp \
 				$(SRC)AForm.cpp \
 				$(SRC)PresidentialPardonForm.cpp \
-				$(SRC)RobotomyRequestForm.cpp
+				$(SRC)RobotomyRequestForm.cpp \
+				$(SRC)ShrubberyCreationForm.cpp
 # Couleurs
 BOLD		=	"\033[1m"
 RESET		=	"\033[0m"

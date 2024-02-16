@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
+#include <fstream>
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
@@ -23,17 +22,21 @@
 # define PURPLE				"\e[35m"
 # define CYAN				"\e[36m"
 
-class RobotomyRequestForm : public AForm
+class ShrubberyCreationForm : public AForm
 {
 	private :
 		std::string	target;
 
 	public:
-		RobotomyRequestForm();
-		RobotomyRequestForm(RobotomyRequestForm &copy);
-		RobotomyRequestForm(std::string target);
-		~RobotomyRequestForm();
-		RobotomyRequestForm& operator=(const RobotomyRequestForm& obj);
-		RobotomyRequestForm& operator=(RobotomyRequestForm& other);
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(ShrubberyCreationForm &copy);
+		ShrubberyCreationForm(std::string target);
+		~ShrubberyCreationForm();
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& obj);
+		ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
 		virtual void	execute(Bureaucrat const & executor) const;
+		
+		class FileErrorException : public std::exception{public:
+			virtual const char* what() const throw();
+		};
 };

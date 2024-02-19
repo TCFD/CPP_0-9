@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:42:18 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:07:49 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/19 14:19:27 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.hpp"
 
 unsigned		Bureaucrat::getGrade() const {return this->grade;}
-std::string		Bureaucrat::getName() const {return this->name;}
+std::string		Bureaucrat::getName() const  {return this->name;}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade is too low");
@@ -41,10 +41,7 @@ void	Bureaucrat::decrementGrade() {
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat & copy) {
 	if (this != &copy)
-	{
-		(std::string)this->name = copy.name;
 		this->grade = copy.grade;
-	}
 	return (*this);
 }
 

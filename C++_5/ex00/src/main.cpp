@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/15 18:07:29 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:29:00 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void) {
 
-	std::cout << CYAN << "\nIncrementing too high" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nIncrementing too high" << NC << std::endl;
 	try {
 		Bureaucrat newGuy("newGuy", 3);
 		std::cout << newGuy << std::endl;
@@ -27,7 +27,7 @@ int	main(void) {
 	catch (std::exception& e) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
-	std::cout << CYAN << "\nDecrementing too high" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nDecrementing too low" << NC << std::endl;
 	try {
 		Bureaucrat newGuy("newGuy", 148);
 		std::cout << newGuy << std::endl;
@@ -41,7 +41,7 @@ int	main(void) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nInitialization too low" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nInitialization too low (151)" << NC << std::endl;
 
 	try {
 		Bureaucrat newGuy("newGuy", 151);
@@ -50,7 +50,7 @@ int	main(void) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nInitialization too high" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nInitialization too high (0)" << NC << std::endl;
 
 	try {
 		Bureaucrat newGuy("newGuy", 0);
@@ -59,7 +59,7 @@ int	main(void) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nInitialization at upper limit" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nInitialization at upper limit (1)" << NC << std::endl;
 
 	try {
 		Bureaucrat newGuy("newGuy", 1);
@@ -69,7 +69,7 @@ int	main(void) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nInitialization at lower limit" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nInitialization at lower limit (150)" << NC << std::endl;
 
 	try {
 		Bureaucrat newGuy("newGuy", 150);
@@ -79,7 +79,7 @@ int	main(void) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nDecrementing then incrementing" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nDecrementing then incrementing" << NC << std::endl;
 
 	try {
 		Bureaucrat newGuy("newGuy", 5);
@@ -102,7 +102,7 @@ int	main(void) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nIncrementing then Decrementing" << NC << std::endl;
+	std::cout << CYAN << BOLD << "\nIncrementing then Decrementing" << NC << std::endl;
 
 	try {
 		Bureaucrat newGuy("newGuy", 5);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/16 16:58:49 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/19 17:33:35 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,49 @@
 int	main(void) {
 
 
-	std::cout << CYAN << "\nShrubberyCreationForm\n" << NC << std::endl;
-	Bureaucrat newGuy("newGuy", 6);
+	Bureaucrat newGuy("newGuy", 2);
+	std::cout << CYAN << "\nShrubberyCreationForm" << NC << std::endl;
 	try {
 		ShrubberyCreationForm form("Jean guy");	
+		form.beSigned(newGuy);
 		std::cout << form << std::endl;	
-		std::cout << newGuy << std::endl;
 		form.execute(newGuy);
 	}
 	catch (std::exception& e) {
 		std::cout << RED << e.what() << NC << std::endl;
 	}
 
-	std::cout << CYAN << "\nPresidentialPardonForm\n" << NC << std::endl;
+	std::cout << CYAN << "\nPresidentialPardonForm" << NC << std::endl;
+	try {
+		PresidentialPardonForm form("Jean guy");	
+		form.beSigned(newGuy);
+		std::cout << form << std::endl;	
+		form.execute(newGuy);
+	}
+	catch (std::exception& e) {
+		std::cout << RED << e.what() << NC << std::endl;
+	}
+
+	std::cout << CYAN << "\nRobotomyRequestForm multiple times" << NC << std::endl;
+	try {
+		RobotomyRequestForm form("Jean guy");	
+		form.beSigned(newGuy);
+		std::cout << form << std::endl;	
+		form.execute(newGuy);
+		form.execute(newGuy);
+		form.execute(newGuy);
+		form.execute(newGuy);
+		form.execute(newGuy);
+	}
+	catch (std::exception& e) {
+		std::cout << RED << e.what() << NC << std::endl;
+	}
+	std::cout << CYAN << "\nUnsigned form" << NC << std::endl;
 	try {
 		PresidentialPardonForm form("Jean guy");	
 		std::cout << form << std::endl;	
-		std::cout << newGuy << std::endl;
 		form.execute(newGuy);
-	}
-	catch (std::exception& e) {
-		std::cout << RED << e.what() << NC << std::endl;
-	}
-
-	std::cout << CYAN << "\nRobotomyRequestForm\n" << NC << std::endl;
-	try {
-		RobotomyRequestForm form("Jean guy");	
-		std::cout << form << std::endl;	
-		std::cout << newGuy << std::endl;
-		form.execute(newGuy);
+		std::cout << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << RED << e.what() << NC << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:56:01 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:09:49 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/19 18:05:05 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Form::Form(std::string name, int gradeToExecute, int gradeToSign) : name(name), 
 		throw GradeTooLowException();
 }
 
-Form::Form(std::string name, int gradeToExecute, int gradeToSign) : name("random form"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
+Form::Form() : name("random form"), isSigned(false), gradeToSign(150), gradeToExecute(150) {
 	std::cout << PURPLE << "Form default constructor called" << NC << std::endl;
 }
 
@@ -34,9 +34,13 @@ std::ostream	&operator<<(std::ostream &out, const Form &instance) {
 }
 
 void		Form::beSigned(Bureaucrat &newGuy) {
-	if (newGuy.getGrade() > getGradeToSign())
-		throw GradeTooLowException();
-	isSigned = true;
+	if (isSigned)
+		std::cout << RED << name << " is already signed" << NC << std::endl;
+	else {
+		if (newGuy.getGrade() > getGradeToSign())
+			throw GradeTooLowException();
+		isSigned = true;
+	}
 }
 
 

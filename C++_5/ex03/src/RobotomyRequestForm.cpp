@@ -18,6 +18,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	}
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
+	// srand()
 	std::cout << "--VvBRvvzzVRRvrvvvRVvvrrZzvVVvv--" <<std::endl;
 	if (clock() % 2)
 		std::cout << RED << target << " has been robotomized" << NC << std::endl;

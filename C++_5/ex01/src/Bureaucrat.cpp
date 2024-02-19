@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:42:18 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/14 19:08:17 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/19 18:06:24 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,21 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) {
 }
 
 void	Bureaucrat::signForm(Form &form) {
-	std::cout << CYAN << name;
-	try 
-	{
-		form.beSigned(*this);
-		std::cout << " signed " << form.getName() << std::endl;
+	if (form.getIsSigned())
+		std::cout << RED << form.getName() << " is already signed" << NC << std::endl;
+	else {
+		std::cout << CYAN << name;
+		try 
+		{
+			form.beSigned(*this);
+			std::cout << " signed " << form.getName() << std::endl;
+		}
+		catch (const std::exception &e)
+		{
+			std::cout << " couldn't sign " << form.getName() << " because his grade (" << grade << ") is lower than " << form.getName() << "'s grade (" << form.getGradeToSign() << ")" << std::endl;
+		}
+		std::cout << NC;
 	}
-	catch (const std::exception &e)
-	{
-		std::cout << " couldn't sign " << form.getName() << " because his grade (" << grade << ") is lower than " << form.getName() << "'s grade (" << form.getGradeToSign() << ")" << std::endl;
-	}
-	std::cout << NC;
 }
 
 Bureaucrat::Bureaucrat() : name("random bureaucrat"), grade(150) {

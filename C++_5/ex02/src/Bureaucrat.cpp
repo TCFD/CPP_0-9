@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:42:18 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 18:06:43 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:43:22 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Bureaucrat::decrementGrade() {
 	grade++;
 }
 
-Bureaucrat & Bureaucrat::operator=(Bureaucrat & copy) {
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat & copy) {
 	if (this != &copy)
 		this->grade = copy.grade;
 	return (*this);
@@ -70,6 +70,22 @@ void	Bureaucrat::signAForm(AForm &form) {
 		}
 		std::cout << NC;
 	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form) {
+	try 
+	{
+		form.execute(*this);
+		std::cout << CYAN << name << " executed " << form.getName() << std::endl;
+	}
+	catch (const AForm::NotSignedException &e) {	
+		std::cout << CYAN << name << " couldn't execute " << form.getName() << " because it's not signed" << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << CYAN << name << " couldn't execute " << form.getName() << " because his grade (" << grade << ") is lower than " << form.getName() << "'s grade (" << form.getGradeToSign() << ")" << std::endl;
+	}
+	std::cout << NC;
 }
 
 Bureaucrat::Bureaucrat() : name("random bureaucrat"), grade(150) {

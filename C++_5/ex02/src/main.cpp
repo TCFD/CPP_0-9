@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 17:33:35 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:39:25 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,11 @@ int	main(void) {
 	}
 	std::cout << CYAN << "\nUnsigned form" << NC << std::endl;
 	try {
-		PresidentialPardonForm form("Jean guy");	
+		PresidentialPardonForm form("Jean guy");
 		std::cout << form << std::endl;	
-		form.execute(newGuy);
+		newGuy.signAForm(form);
+		newGuy.executeForm(form);
+		// form.execute(newGuy);
 		std::cout << std::endl;
 	}
 	catch (std::exception& e) {

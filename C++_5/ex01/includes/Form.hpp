@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:56:08 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/16 00:16:41 by raphael          ###   ########.fr       */
+/*   Updated: 2024/02/19 20:43:02 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Form {
 		~Form();
 		Form();
 		Form(const Form &a);
-		Form& operator=(Form& other);
+		Form& operator=(const Form& other);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Form &instance);

@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:34:09 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 17:14:33 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:44:26 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Intern::Intern(){}
 Intern::~Intern(){}
-Intern& Intern::operator=(Intern& other){(void)(other);return *this;}
+Intern& Intern::operator=(const Intern& other){(void)(other);return *this;}
 Intern::Intern(const Intern &cpy){(void)(cpy);}
 
 AForm *Intern::InternS (std::string target) {

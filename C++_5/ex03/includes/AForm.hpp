@@ -47,7 +47,7 @@ class AForm {
 		};
 		AForm(std::string name, int getGradeToExecute, int gradeToSign);
 		AForm(const AForm &a);
-		AForm& operator=(AForm& other);
+		AForm& operator=(const AForm& other);
 		AForm();
 
 		virtual ~AForm();

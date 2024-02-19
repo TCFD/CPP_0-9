@@ -42,7 +42,7 @@ void		AForm::beSigned(Bureaucrat &newGuy) {
 
 AForm::~AForm()	{std::cout << GREEN << "AForm Destructor called" << NC << std::endl;}
 
-AForm& AForm::operator=(AForm& other) {
+AForm& AForm::operator=(const AForm& other) {
 	if (this != &other)
 		this->isSigned = other.isSigned;
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 19:19:18 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/15 18:11:26 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:43:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm();
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& obj);
-		PresidentialPardonForm& operator=(PresidentialPardonForm& other);
 		virtual void	execute(Bureaucrat const & executor) const;
 };

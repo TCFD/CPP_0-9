@@ -40,7 +40,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << GREEN << "RobotomyRequestForm destructor called" << NC << std::endl;	
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& other) {
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
 	this->target = other.target;
 	return (*this);
 }

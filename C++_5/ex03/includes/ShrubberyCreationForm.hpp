@@ -35,7 +35,6 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& obj);
-		ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
 		virtual void	execute(Bureaucrat const & executor) const;
 		
 		class FileErrorException : public std::exception{public:

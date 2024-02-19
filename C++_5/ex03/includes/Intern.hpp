@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:33:48 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 17:14:28 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:44:05 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Intern
 	
 
 	public:
-        Intern& operator=(Intern& other);
+        Intern& operator=(const Intern& other);
 		Intern(const Intern &cpy);
 		Intern();
 		~Intern();

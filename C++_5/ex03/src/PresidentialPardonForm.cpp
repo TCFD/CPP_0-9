@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 19:20:10 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/19 17:34:14 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:44:22 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 	std::cout << GREEN << "PresidentialPardonForm destructor called" << NC << std::endl;	
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm& other) {
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other) {
 	this->target = other.target;
 	return (*this);
 }

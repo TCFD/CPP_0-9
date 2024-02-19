@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:42:18 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 14:19:27 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:42:40 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Bureaucrat::decrementGrade() {
 	grade++;
 }
 
-Bureaucrat & Bureaucrat::operator=(Bureaucrat & copy) {
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat & copy) {
 	if (this != &copy)
 		this->grade = copy.grade;
 	return (*this);

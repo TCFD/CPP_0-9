@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:56:01 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 18:05:05 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/19 20:42:52 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		Form::beSigned(Bureaucrat &newGuy) {
 
 Form::~Form()	{std::cout << GREEN << "Form Destructor called" << NC << std::endl;}
 
-Form& Form::operator=(Form& other) {
+Form& Form::operator=(const Form& other) {
 	if (this != &other)
 		this->isSigned = other.isSigned;
 	return (*this);

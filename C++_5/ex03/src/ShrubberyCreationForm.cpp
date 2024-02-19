@@ -59,7 +59,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << GREEN << "ShrubberyCreationForm destructor called" << NC << std::endl;	
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& other) {
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other) {
 	this->target = other.target;
 	return (*this);
 }

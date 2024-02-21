@@ -1,0 +1,6 @@
+class ScalarConverter
+
+static void nameOfFunction {} to make a static method
+
+convert input into char, int, float, double.
+

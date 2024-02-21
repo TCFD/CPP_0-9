@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
+#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2024/02/13 20:43:38 by rciaze           ###   ########.fr        #
+#    Updated: 2024/02/21 03:52:47 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC			=	src/
 
 # SRCS
 SRCS		=	$(SRC)main.cpp \
-				$(SRC)Bureaucrat.cpp
+				$(SRC)ScalarConverter.cpp
 
 # Couleurs
 BOLD		=	"\033[1m"

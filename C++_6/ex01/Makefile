@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
+#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2024/02/14 12:13:04 by rciaze           ###   ########.fr        #
+#    Updated: 2024/02/22 17:02:03 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,7 @@ SRC			=	src/
 
 # SRCS
 SRCS		=	$(SRC)main.cpp \
-				$(SRC)Bureaucrat.cpp \
-				$(SRC)Form.cpp 
+				$(SRC)Serializer.cpp \
 
 # Couleurs
 BOLD		=	"\033[1m"

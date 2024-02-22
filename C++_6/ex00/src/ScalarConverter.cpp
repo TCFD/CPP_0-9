@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:46:24 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/21 07:26:34 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/02/22 16:38:02 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ bool	isInputAlright(std::string original) {
 		std::cout << "double : nan" << std::endl;
 		return 1;
 	}
-	if (!isdigit(original.c_str()[0]) && !isdigit(original.c_str()[1])) {
-		std::cout << "Hey, that input doesn't seems right..." << std::endl;
-		return 1;
+	for (int i = 1; original.c_str()[i]; i++) {
+		if (!isdigit(original.c_str()[i])) {
+			std::cout << "Hey, that input doesn't seems right..." << std::endl;
+			return 1;
+		}
 	}
 	return 0;
 }
@@ -49,7 +51,10 @@ int detect(std::string original) {
 		return 2;
 	if (original.find('f') != std::string::npos)
 		return 3;
-	return (4);
+	if (original.find('.') != std::string::npos)
+		return (4);
+	std::cout << "Unknown type." << std::endl;
+	return (-1);
 }
 
 void	itsChar(std::string original) {
@@ -163,3 +168,8 @@ void ScalarConverter::convert(std::string original) {
 			break;
 	}
 }
+
+ScalarConverter::ScalarConverter() {};
+ScalarConverter::ScalarConverter(const ScalarConverter &cpy) {(void)(cpy);};
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {(void)(other);return *this;};
+ScalarConverter::~ScalarConverter() {};

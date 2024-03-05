@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 17:34:01 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/02 14:59:53 by zbp15            ###   ########.fr       */
+/*   Created: 2024/03/03 17:03:44 by zbp15             #+#    #+#             */
+/*   Updated: 2024/03/05 12:11:35 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <time.h>
 #include <iostream>
-#include <stdlib.h>
 
-# define NC					"\e[0m"
-# define RED				"\e[31m"
-# define GREEN				"\e[32m"
-# define PURPLE				"\e[35m"
-# define CYAN				"\e[36m"
+template<typename T>
+void iter(T *array, size_t lenght, void func(T &elmt)) {
+	for (size_t i = 0; i < lenght; i++) {
+			func(array[i]);
+	}
+}
 
-class Base
-{
-	public:
-		virtual ~Base(void);
-};
+template<typename T>
+void print(T *array, unsigned lenght) {
+	for (size_t i = 0; i < lenght; i++) {
+		std::cout << "element " << i << " = " <<  array[i] << std::endl ;
+	}
+}
 
-class A : public Base {};
-class B : public Base {};
-class C : public Base {};
+template<typename T>
+void increment(T &elmt) {
+	elmt += 1.0;
+	// elmt++;
+}

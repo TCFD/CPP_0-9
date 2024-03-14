@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:22:40 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/12 17:18:12 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/13 11:27:25 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 #include <iostream>
 #include <time.h>
 #include <limits.h>
+
+# define NC					"\e[0m"
+# define BOLD					"\e[1m"
+# define RED				"\e[31m"
+# define GREEN				"\e[32m"
+# define PURPLE				"\e[35m"
+# define CYAN				"\e[36m"
 
 class Span {
 	private:

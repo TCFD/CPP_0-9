@@ -54,6 +54,7 @@
 		"sstream": "cpp",
 		"chrono": "cpp",
 		"list": "cpp",
-		"set": "cpp"
+		"set": "cpp",
+		"map": "cpp"
 	}
 }

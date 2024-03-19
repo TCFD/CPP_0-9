@@ -67,3 +67,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 const char* ShrubberyCreationForm::FileErrorException::what() const throw() {
 	return ("Outfile error.");
 }
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &copy) : AForm(copy.getName(), 5, 25), target(copy.target) {
+	std::cout << PURPLE << "Copy ShrubberyCreationForm constructor called" << NC << std::endl;		
+}
+
+std::string ShrubberyCreationForm::getTarget () const {return target;}

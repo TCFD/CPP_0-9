@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:21:15 by rciaze            #+#    #+#             */
-/*   Updated: 2024/02/19 17:35:14 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/20 20:24:42 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,19 @@ int	main(void) {
 	AForm* scf;
 	AForm* doesntExist;
 
-	std::cout << std::endl;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	rrf->beSigned(bob);
-	std::cout << std::endl;
-	ppf = someRandomIntern.makeForm("presidential pardon", "TurboTanguy");
-	ppf->beSigned(bob);
-	std::cout << std::endl;
-	scf = someRandomIntern.makeForm("shrubbery creation", "Alfred");
-	scf->beSigned(bob);
-	std::cout << std::endl;
-	doesntExist = someRandomIntern.makeForm("who ?", "Alfred");
-	std::cout << std::endl;
-
 	try {
+		std::cout << std::endl;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf->beSigned(bob);
+		std::cout << std::endl;
+		ppf = someRandomIntern.makeForm("presidential pardon", "TurboTanguy");
+		ppf->beSigned(bob);
+		std::cout << std::endl;
+		scf = someRandomIntern.makeForm("shrubbery creation", "Alfred");
+		scf->beSigned(bob);
+		std::cout << std::endl;
+		doesntExist = someRandomIntern.makeForm("who ?", "Alfred");
+		std::cout << std::endl;
 		std::cout << CYAN << "robotomy form execution" << NC << std::endl;
 		rrf->execute(bob);
 		std::cout << std::endl;

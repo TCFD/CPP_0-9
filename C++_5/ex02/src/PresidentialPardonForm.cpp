@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 19:20:10 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/19 20:43:19 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/02/20 20:34:01 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,9 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	this->target = other.target;
 	return (*this);
 }
+
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &copy) : AForm(copy.getName(), 5, 25), target(copy.target) {
+	std::cout << PURPLE << "Copy PresidentialPardonForm constructor called" << NC << std::endl;		
+}
+
+std::string PresidentialPardonForm::getTarget () const {return target;}

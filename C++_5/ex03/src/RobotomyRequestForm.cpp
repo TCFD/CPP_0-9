@@ -18,7 +18,6 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	}
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
-	// srand()
 	std::cout << "--VvBRvvzzVRRvrvvvRVvvrrZzvVVvv--" <<std::endl;
 	if (clock() % 2)
 		std::cout << RED << target << " has been robotomized" << NC << std::endl;
@@ -44,3 +43,9 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 	this->target = other.target;
 	return (*this);
 }
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy) : AForm(copy.getName(), 5, 25), target(copy.target) {
+	std::cout << PURPLE << "Copy RobotomyRequestForm constructor called" << NC << std::endl;		
+}
+
+std::string RobotomyRequestForm::getTarget () const {return target;}

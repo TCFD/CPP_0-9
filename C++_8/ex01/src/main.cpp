@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:22:20 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/13 11:32:07 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/18 15:14:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	main(void) {
 
 	try {
 		std::cout << CYAN << "Subject test :" << NC << std::endl;
-		Span sp = Span(5);
+		Span sp = Span(7);
 		sp.addNumber(6);
 		sp.addNumber(3);
-		sp.addNumber(17);
+ 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
 		sp.printSpan();

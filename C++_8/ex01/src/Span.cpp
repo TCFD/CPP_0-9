@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:22:37 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/13 11:01:43 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/18 15:12:11 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ int		Span::shortestSpan() {
 	if (vec.size() < 2)
 		throw std::runtime_error("Not enought elements in the Span");
 
-	std::set<int> s(vec.begin(), vec.end());
+	std::vector<int> s(vec.begin(), vec.end());
+	std::sort(s.begin(), s.end());
 	std::set<int> s2;
-	std::set<int>:: iterator it = s.begin();
-	std::set<int>:: iterator it2 = it;
+	std::vector<int>:: iterator it = s.begin();
+	std::vector<int>:: iterator it2 = it;
 	it++;
 	for(; it != s.end(); it++, it2++)
 		s2.insert(*it - *it2);
@@ -76,7 +77,6 @@ void	Span::fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator
 	if (vec.size() + (end - begin) > maxSize)
 		throw std::runtime_error("No enought space in the Span.");
 
-	
 	for (; begin < end; begin++) {
 		addNumber(*begin);
 	}

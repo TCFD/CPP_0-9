@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <iostream>
 #include <fstream>
 
@@ -38,4 +40,5 @@ class ShrubberyCreationForm : public AForm
 		class FileErrorException : public std::exception{public:
 			virtual const char* what() const throw();
 		};
+		std::string getTarget() const;
 };

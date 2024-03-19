@@ -43,3 +43,9 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 	this->target = other.target;
 	return (*this);
 }
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy) : AForm(copy.getName(), 5, 25), target(copy.target) {
+	std::cout << PURPLE << "Copy RobotomyRequestForm constructor called" << NC << std::endl;		
+}
+
+std::string RobotomyRequestForm::getTarget () const {return target;}

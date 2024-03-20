@@ -48,19 +48,21 @@ int main(int, char**)
 
 	try
 	{
+		std::cout << "Trying with an invalid index (-2) : " << std::endl;
 		numbers[-2] = 0;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl << std::endl;
 	}
 	try
 	{
+		std::cout << "Trying with an invalid index (MAX_VAL (750)) : " << std::endl;
 		numbers[MAX_VAL] = 0;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl << std::endl;
 	}
 
 	Array<int> test(5);

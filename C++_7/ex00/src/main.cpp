@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 16:02:51 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/05 12:21:36 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:28:57 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.hpp"
 
 int	main() {
-	int a = 5;
+/*  	int a = 5;
 	int b = 2;
 
 	std::cout << BOLD << RED << "\tTesting with ints" << NC << std::endl; 
@@ -28,8 +28,8 @@ int	main() {
 	std::string e = "i'm e";
 	std::string f = "i'm f";
 	std::cout << BOLD << RED << "\tTesting with strings" << NC << std::endl; 
-	::test(e, f, 'e', 'f');
-	/* int a = 2;
+	::test(e, f, 'e', 'f'); */
+	int a = 2;
 	int b = 3;
 	::swap( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;
@@ -40,6 +40,6 @@ int	main() {
 	::swap(c, d);
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl; */
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	return 0;
 }

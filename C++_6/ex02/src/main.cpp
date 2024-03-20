@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 17:35:25 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/22 18:05:54 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/20 12:51:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Base * generate(void) {
 	Base *rt;
 
 	std::cout << "\nGenerating new obj (";
-	switch (clock() % 3) {
+	switch (rand() % 3) {
 		case 0 :
 		{
 			std::cout << GREEN << "A" << NC << ")" << std::endl;
@@ -81,19 +81,14 @@ void identify(Base& p) {
 }
 
 int main () {
-	Base *test = generate();
-	identify(test);
-	identify(*test);
-
-	test = generate();
-	identify(test);
-	identify(*test);
-
-	test = generate();
-	identify(test);
-	identify(*test);
-
-	test = generate();
-	identify(test);
-	identify(*test);
+	srand(time(0));
+	
+	std::cout << "how many test would you like ? ";
+	int nbOfTests; std::cin >> nbOfTests;
+	Base *test;
+	for (int i = 0; i < nbOfTests; i++) {
+		test = generate();
+		identify(test);
+		identify(*test);
+	}
 }

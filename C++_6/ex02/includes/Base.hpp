@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 17:34:01 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/02 14:59:53 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/20 12:47:39 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <time.h>
 #include <iostream>
 #include <stdlib.h>
+#include <sys/time.h>
 
 # define NC					"\e[0m"
 # define RED				"\e[31m"

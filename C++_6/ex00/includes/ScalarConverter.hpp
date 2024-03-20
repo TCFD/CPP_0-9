@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:46:26 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/22 16:30:52 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/20 12:26:17 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,15 @@ class ScalarConverter {
 	private :
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &cpy);
-	public :	
+
+	public :
         ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
+		static bool	isInputAlright(std::string original);
+		static int		detect(std::string original);
+		static void	itsChar(std::string original);
+		static void	itsInt(std::string original);
+		static void	itsFloat(std::string original);
+		static void	itsDouble(std::string original);
 		static void convert(std::string original);
 };

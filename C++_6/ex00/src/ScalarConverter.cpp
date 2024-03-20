@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:46:24 by zbp15             #+#    #+#             */
-/*   Updated: 2024/02/22 16:38:02 by zbp15            ###   ########.fr       */
+/*   Updated: 2024/03/20 12:35:42 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ScalarConverter.hpp"
 
-bool	isInputAlright(std::string original) {
+bool	ScalarConverter::isInputAlright(std::string original) {
 	if (original == "+inf" || original == "+inff") {
 		std::cout << "char : impossible" << std::endl;
 		std::cout << "int : impossible" << std::endl;
@@ -34,8 +34,16 @@ bool	isInputAlright(std::string original) {
 		std::cout << "double : nan" << std::endl;
 		return 1;
 	}
-	for (int i = 1; original.c_str()[i]; i++) {
-		if (!isdigit(original.c_str()[i])) {
+	bool isF = false, isDot = false, isMinus = false;
+	
+	for (size_t i = 1; original[i]; i++) {
+		if (original[i] == '-' && i == 0)	
+			isMinus = true;
+		else if (original[i] == '.' && !isDot)	
+			isDot = true;
+		else if (isDot == true && original[i] == 'f' && !isF)
+			isF = true;
+		else if (!isdigit(original[i]) || (isF && isdigit(original[i]))) {
 			std::cout << "Hey, that input doesn't seems right..." << std::endl;
 			return 1;
 		}
@@ -43,7 +51,7 @@ bool	isInputAlright(std::string original) {
 	return 0;
 }
 
-int detect(std::string original) {
+int ScalarConverter::detect(std::string original) {
 	const char *str = original.c_str();
 	if (!isdigit(str[0]) && isprint(str[0]) && !isdigit(str[1]))
 		return 1;
@@ -57,7 +65,7 @@ int detect(std::string original) {
 	return (-1);
 }
 
-void	itsChar(std::string original) {
+void	ScalarConverter::itsChar(std::string original) {
 	char nb = original.c_str()[0];
 	
 	std::cout << "char : " << nb << std::endl;
@@ -66,7 +74,7 @@ void	itsChar(std::string original) {
 	std::cout << "double : " << static_cast<double>(nb) << ".0" << std::endl;
 }
 
-void	itsInt(std::string original) {
+void	ScalarConverter::itsInt(std::string original) {
 	long int value = atol(original.c_str());
 	
 	if (static_cast<int>(value) != value)
@@ -89,7 +97,7 @@ void	itsInt(std::string original) {
 		
 }
 
-void	itsFloat(std::string original) {
+void	ScalarConverter::itsFloat(std::string original) {
 	float value = atof(original.c_str());
 
 	if (static_cast<float>(static_cast<char>(value)) != value || !isprint(value))
@@ -113,7 +121,7 @@ void	itsFloat(std::string original) {
 	std::cout << std::endl;
 }
 
-void	itsDouble(std::string original) {
+void	ScalarConverter::itsDouble(std::string original) {
 	double value = strtod(original.c_str(), NULL);
 	
 	if (static_cast<double>(static_cast<char>(value)) != value || !isprint(value))

@@ -16,7 +16,7 @@
 #include <string>
 #include <cstdlib>
 
-int operate(int a, int b, char op) {
+long long operate(long long a, long long b, char op) {
 	switch(op) {
 		case '+': return a + b;
 		case '-': return a - b;
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
 	std::string input = argv[1];
 	std::istringstream iss(input);
 	std::string token;
-	std::stack<int> s;
+	std::stack<long long> s;
 
 	while(iss >> token) {
 		if(token == "+" || token == "-" || token == "*" || token == "/") {
@@ -54,8 +54,18 @@ int main(int argc, char* argv[]) {
 			s.pop();
 			int a = s.top();
 			s.pop();
-			s.push(operate(a, b, token[0]));
+			long long result = operate(a, b, token[0]);
+			std::cout << "long long result : " << result << " int : "  << static_cast<int>(result) << std::endl;
+			if (result != static_cast<int>(result)) {
+				std::cout << "Erreur: resultat en dehors des limites d'un int." << std::endl;
+				return 1;
+			}
+			s.push(result);
 		} else {
+			if (token.length() > 1) {
+				std::cout << "Erreur: Expression invalide." << std::endl;
+				return 1;
+			}
 			int num = std::atoi(token.c_str());
 			s.push(num);
 		}

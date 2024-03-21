@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:22:37 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/18 15:12:11 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/03/21 15:13:07 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,11 @@ void	Span::fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator
 
 void	Span::printSpan() {
 
-   std::cout << "Span has " << vec.size() << " values" << std::endl;
+   std::cout << "Span has " << vec.size() << " values : ";
     for (size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i];
         if (i != vec.size() - 1) {
-            std::cout << "_";
+            std::cout << " ";
         }
     }
     std::cout << std::endl;

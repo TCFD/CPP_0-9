@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:22:20 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/18 15:14:45 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/03/21 15:13:42 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(void) {
 		std::cout << "shortestSpan : " << sp.shortestSpan() << std::endl;
 		std::cout << "longestSpan : " << sp.longestSpan() << std::endl << std::endl;
 	}
-	catch (std::exception &e) {std::cout << e.what() << std::endl;}
+	catch (std::exception &e) {std::cout << e.what() << std::endl << std::endl;}
 
 	try {
 		std::cout << CYAN << "Random span (lenght 20000) :" << NC << std::endl;

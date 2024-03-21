@@ -1,70 +1,64 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 12:17:35 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/13 12:22:04 by zbp15            ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   main.cpp										   :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: rciaze <rciaze@student.42.fr>			  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/03/13 12:17:35 by zbp15			 #+#	#+#			 */
+/*   Updated: 2024/03/21 15:24:39 by rciaze		   ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "../includes/MutantStack.hpp"
 
-#include <iostream>
-#include <stack>
+/* int main() {
+    std::list<int> lst;
+    lst.push_back(5); 
+    lst.push_back(17);
+    std::cout << lst.back() << std::endl;
+    lst.pop_back();
+    std::cout << lst.size() << std::endl;
 
-template<typename T>
-class MutantStack : public std::stack<T> {
-private:
-    std::stack<T> stack;
+    lst.push_back(3);
+    lst.push_back(5);
+    lst.push_back(737);
+    // [...]
+    lst.push_back(0);
 
-public:
-    // Définition de l'itérateur pour MutantStack
-    class iterator {
-    private:
-        typename std::stack<T>::container_type::iterator current;
-
-    public:
-        iterator(typename std::stack<T>::container_type::iterator it) : current(it) {}
-
-        T& operator*() {
-            return *current;
-        }
-
-        iterator& operator++() {
-            ++current;
-            return *this;
-        }
-
-        bool operator!=(const iterator& other) const {
-            return current != other.current;
-        }
-    };
-
-    iterator begin() {
-        return iterator(std::stack<T>::c.begin());
+    std::list<int>::iterator it = lst.begin();
+    std::list<int>::iterator ite = lst.end();
+    ++it;
+    --it;
+    while (it != ite) {
+        std::cout << *it << std::endl;
+        ++it;
     }
-
-    iterator end() {
-        return iterator(std::stack<T>::c.end());
-    }
-
-    // Implémentation des autres membres de MutantStack...
-};
-
-int main() {
-    MutantStack<int> myStack;
-    myStack.push(1);
-    myStack.push(2);
-    myStack.push(3);
-
-    // Parcourir les éléments de la pile à l'aide de l'itérateur
-    for (MutantStack<int>::iterator it = myStack.begin(); it != myStack.end(); ++it) {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
-
     return 0;
+}
+ */
+int main()
+{
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+	return 0;
 }

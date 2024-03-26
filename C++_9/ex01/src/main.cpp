@@ -55,7 +55,6 @@ int main(int argc, char* argv[]) {
 			int a = s.top();
 			s.pop();
 			long long result = operate(a, b, token[0]);
-			std::cout << "long long result : " << result << " int : "  << static_cast<int>(result) << std::endl;
 			if (result != static_cast<int>(result)) {
 				std::cout << "Erreur: resultat en dehors des limites d'un int." << std::endl;
 				return 1;

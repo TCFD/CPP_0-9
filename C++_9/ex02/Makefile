@@ -6,7 +6,7 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 12:41:45 by zbp15             #+#    #+#              #
-#    Updated: 2024/03/19 18:16:01 by rciaze           ###   ########.fr        #
+#    Updated: 2024/03/26 15:21:11 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC			=	src/
 
 # SRCS
 SRCS		=	$(SRC)main.cpp \
-				
+				$(SRC)PmergeMe.cpp
 # Couleurs
 BOLD		=	"\033[1m"
 RESET		=	"\033[0m"

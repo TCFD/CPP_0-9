@@ -6,11 +6,17 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:10:06 by zbp15             #+#    #+#             */
-/*   Updated: 2024/03/20 16:05:57 by rciaze           ###   ########.fr       */
+/*   Updated: 2024/03/26 18:22:13 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/BitcoinExchange.hpp"
+
+BitcoinExchange::BitcoinExchange() {}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& src) {data = src.data;}
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj) {data = obj.data; return *this;}
+BitcoinExchange::~BitcoinExchange() {}
+
 
 void	BitcoinExchange::storeData(const char *path) {
 	std::string						line;
